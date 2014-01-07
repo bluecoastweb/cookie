@@ -17,7 +17,7 @@ class Cookie {
     public function set() {
         $name = $this->EE->TMPL->fetch_param('name');
         $value = $this->EE->TMPL->fetch_param('value');
-        $seconds = $this->EE->TMPL->fetch_param('number', 0);
+        $seconds = $this->EE->TMPL->fetch_param('seconds', 0);
         if ($name && $value) {
             $this->EE->functions->set_cookie($name, $value, $seconds);
         }
