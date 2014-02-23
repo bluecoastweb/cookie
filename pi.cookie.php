@@ -2,10 +2,10 @@
 
 $plugin_info = array(
     'pi_name'        => 'Cookie',
-    'pi_version'     => '1.0.0',
+    'pi_version'     => '1.0.1',
     'pi_author'      => 'Steve Pedersen',
     'pi_author_url'  => 'http://www.bluecoastweb.com/',
-    'pi_description' => "Who does't love Cookies?",
+    'pi_description' => "Who does't love a cookie?",
     'pi_usage'       => Cookie::usage()
 );
 
@@ -35,6 +35,11 @@ class Cookie {
             $var = $this->EE->TMPL->fetch_param('name');
         }
         return str_replace('{'.$var.'}', $value, $this->EE->TMPL->tagdata);
+    }
+
+    public function delete() {
+        $name = $this->EE->TMPL->fetch_param('name');
+        $this->EE->functions->set_cookie($name, null, -1);
     }
 
     public function prefix() {
@@ -79,6 +84,10 @@ If you'd prefer something different then specify a "variable" paramter.
     Hello {username}, have a {cookie}!
 
   {/exp:cookie:get_here}
+
+Delete a cookie:
+
+  {exp:cookie:delete name='chocolate'}
 
 <?php
         $buffer = ob_get_contents();
