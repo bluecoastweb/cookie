@@ -11,7 +11,7 @@ The "seconds" parameter is optional, defaulting to "0":
 
     {exp:cookie:set name="chocolate" value="i am a session cookie"}
 
-And get it:
+And retrieve it in one gulp:
 
     What a delicious {exp:cookie:get name="chocolate"}!
 
@@ -36,3 +36,7 @@ If you'd prefer something different then specify a "variable" paramter.
         Hello {username}, have a {cookie}!
 
     {/exp:cookie:get_here}
+
+Delete a cookie:
+
+    {exp:cookie:delete name='chocolate'}
