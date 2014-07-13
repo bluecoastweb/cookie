@@ -23,13 +23,13 @@ Or savour it, if you prefer:
 
     {/exp:cookie:get_here}
 
-The "name" parameter is sans the EE cookie prefix (by default "exp_").
+The `name` parameter is sans the EE cookie prefix -- by default `exp_`.
 You can ascertain the effective EE cookie prefix by viewing the output of the following tag:
 
     {exp:cookie:prefix}
 
-By default the name of the interpolated variable is the same as that supplied to the "name" parameter.
-If you'd prefer something different then specify a "variable" paramter.
+By default the name of the interpolated variable is the same as that supplied to the `name` parameter.
+If you'd prefer something different then specify a `variable` paramter.
 
     {exp:cookie:get_here name="username" variable="cookie"}
 
